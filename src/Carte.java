@@ -1,3 +1,4 @@
+import javax.swing.text.Element;
 import java.util.ArrayList;
 
 public class Carte {
@@ -6,27 +7,37 @@ public class Carte {
 	private ArrayList<Autor> autori;
 	private ArrayList<ElementPagina> capitole;
 	private Cuprins cuprins;
-	
+	private ArrayList<Element> continut=new ArrayList<Element>();
 	public AlignStrategy leftAlign = new LeftAlign();
 	public AlignStrategy centerAlign = new CenterAlign();
 	public AlignStrategy rightAlign = new RightAlign();
-	
-	public Carte(){
+
+	public Carte() {
 		this.titlu = "";
 		this.autori = new ArrayList<Autor>();
 		this.capitole = new ArrayList<ElementPagina>();
 	}
-	
-	public Carte(String titlu,Cuprins cuprins){
+
+	public Carte(String titlu, Cuprins cuprins) {
 		this.titlu = titlu;
 		this.autori = new ArrayList<Autor>();
 		this.capitole = new ArrayList<ElementPagina>();
 		this.cuprins = cuprins;
 	}
-	
-	public void printBook(){
-		for(ElementPagina e : this.capitole){
+
+	public void printBook() {
+
+		for (ElementPagina e : this.capitole) {
 			e.print();
+		}
+	}
+
+	public void accept(Visitor v)
+	{
+
+		for(Element e: continut)
+		{
+
 		}
 	}
 

@@ -8,18 +8,27 @@ public class Test {
 
 		
 		Sectiune a = new Sectiune("Sectiunea I.1");
-		a.elemente.add(new Imagine("	Image 1"));
-		a.elemente.add(new Paragraf("Somewhere over the rainbow...",c.leftAlign));
-		a.elemente.add(new Paragraf("Somewhere over the rainbow...",c.centerAlign));
+		a.elemente.add(new Imagine("Imaginee1"));
+		a.elemente.add(new Paragraf("Hasannnn",c.leftAlign));
+		a.elemente.add(new Paragraf("dsad",c.rightAlign));
+		a.elemente.add(new Paragraf("Cosmdd",c.centerAlign));
+
 		
 		
+
 		c.getCapitole().add(a);
 		
 		Sectiune b = new Sectiune("Sectiunea II");
 		b.elemente.add(new Paragraf("A paragraph conveying important information",c.rightAlign));
-		b.elemente.add(new Imagine("Image moreee"));
-		b.elemente.add(new Imagine("Image more 22"));
-		
+		b.elemente.add(new Imagine("Image moreeeeee"));
+		/*TODO
+		instantiere documentvizitor
+		DocumentStatisticsVisitor dsv = new DocumentStatisticsVisitor();
+		parcurgere elemente din carte, contorizare
+
+
+
+		 */
 		
 		c.getCapitole().add(b);
 		
