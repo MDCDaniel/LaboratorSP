@@ -1,18 +1,25 @@
 
-public abstract class AbstractElement implements ElementPagina {
+
+public abstract class AbstractElement extends SubjectElement13 {
+	
+	
+	
+	public void add(Element e) throws Exception {
+		throw new Exception("Not Supported");
+		
+	}
+
+	public void remove(Element e) throws Exception {
+		throw new Exception("Not Supported");
+		
+	}
+
+	public Element getElement(int index) throws Exception {
+		throw new Exception("Not Supported");
+	}
 
 	
 	
-	public void addElement(ElementPagina e){
-		
-	}
-	public void removeElement(ElementPagina e){
-		
-	}
-	public int getElements(){
-		return 0;
-	}
-	public void print(){
-		
-	}
+	
+
 }

@@ -1,18 +1,50 @@
 
 public class Imagine extends AbstractElement {
-	public String imagePath;
-	
-	public Imagine(String imagePath){
-		this.imagePath = imagePath;
-		this.loadData(imagePath);
-	}
 
+	
+	public String continut;
+	
+	
+	public Imagine(){}
+	public Imagine(String continut) 
+	{
+		this.continut=continut;
+		
+	}
+	
+	public String toString() {
+	       return continut;
+	   }	
+	
 	public void print() {
-		System.out.println("Showing image from :"+this.imagePath);
+		System.out.println("Imagine :"+this.continut);
 	}
 	
-	public void loadData(String path){
-		//Dummy function to act as a data loader.
+	
+	public String getNume() {
+		return continut;
 	}
 
+	public void setNume(String nume) {
+		this.continut = nume;
+	}
+
+
+	public void accept(Visitor v) {
+		v.visitImage(this);
+	}
+
+	
+	
+	
+	
+	
 }
+
+
+
+
+	
+	
+
+

@@ -1,34 +1,77 @@
+
 public class Paragraf extends AbstractElement{
 	
-	public String text;
-	public AlignStrategy alignment;
+public String continut;
+
 	
-	public Paragraf(String text, AlignStrategy alignment){
-		this.text = text;
-		this.alignment = alignment;
+	public Paragraf(){}
+	public Paragraf(String continut) 
+	{
+		this.continut=continut;
+		
 	}
 	
-	public Paragraf(String text){
-		this.text = text;
+	public void print() {
+		System.out.println("Paragraf: "+this.continut);	
 	}
+	
+
+	public String getText() {
+		return continut;
+	}
+
+	public void setText(String text) {
+		this.continut = text;
+	}
+	
+
+	public void accept(Visitor v) {
+		v.visitParagraf(this);
+	}
+
+	
+	/*
+	@Override
+	public void addElement(Element e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void removeElement(Element e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int getElements() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	/*
 	
 	public void addText(String text){
-		this.text+=text;
+		this.continut=text;
 	}
 	
 	public void show(){
 		System.out.println("Paragraf");
 	}
-	
-	public void setAlign(AlignStrategy as){
-		this.alignment = as;
-	}
 
-	public void print() {
-		if(alignment == null){
-			System.out.println("***"+ this.text);
-		}
-		else this.alignment.printAligned(this.text);
-	}
+	public void addElement(Element e){}		
+	public void removeElement(Element e) {}
+	public int getElements() { return 0;}
+	
+	*/
 
 }
+
+
+
+
+	
+
+	
+
+	
+
+

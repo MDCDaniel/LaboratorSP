@@ -1,30 +1,39 @@
+
 import java.util.ArrayList;
 
-public class Sectiune implements ElementPagina {
+public class Sectiune extends AbstractElement {
 
-	public ArrayList<ElementPagina> elemente;
+	public ArrayList<Element> elemente;
 	public String titlu;
 	
 	public Sectiune(String titlu){
-		elemente = new ArrayList<ElementPagina>();
+		elemente = new ArrayList<Element>();
 		this.titlu = titlu;
 	}
 
-	public void addElement(ElementPagina e) {
-		elemente.add(e);
+	public void addElement(Element e) {
+		elemente.add(e);                                             
 	}
 
-	public void removeElement(ElementPagina e) {
+	public void removeElement(Element e) {
 		elemente.remove(e);
 		
 	}
 	public int getElements() {
 		return elemente.size();
 	}
+	
+	public void accept(Visitor v) {
+		v.visitSectiune(this);
+		for(Element e : this.elemente){
+			e.accept(v);	
+		}
+		
+	}
 
 	public void print() {
-		System.out.println(this.titlu);
-		for(ElementPagina e : this.elemente){
+		System.out.println("	-"+this.titlu+"-");
+		for(Element e : this.elemente){
 			e.print();
 		}
 	}
